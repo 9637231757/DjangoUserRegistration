@@ -1,0 +1,41 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+<h2>User List</h2>
+<a href="{% url 'user_create' %}" class="btn btn-primary mb-3">Add New User</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Date of Birth</th>
+            <th>Photo</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.mobile_number }}</td>
+            <td>{{ user.date_of_birth }}</td>
+            <td>
+                {% if user.photo %}
+                    <img src="{{ user.photo.url }}" alt="Photo" style="max-width: 50px;">
+                {% endif %}
+            </td>
+            <td>
+                <a href="{% url 'user_update' user.pk %}" class="btn btn-sm btn-warning">Edit</a>
+                <a href="{% url 'user_delete' user.pk %}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6">No users found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
