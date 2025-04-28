@@ -1,0 +1,64 @@
+# Python and Django
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+*.egg
+dist/
+build/
+*.sqlite3
+*.sqlite3-journal
+
+# Django-specific
+media/
+*.log
+local_settings.py
+*.pot
+*.mo
+*.po
+
+# Virtual environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+*.swp
+*~
+
+# OS-generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Testing and coverage
+.coverage
+*.cover
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.xml
+*.cache
+nosetests.xml
+coverage/
+.cache/
+
+# Miscellaneous
+*.bak
+*.backup
+*.tmp
+*.temp
